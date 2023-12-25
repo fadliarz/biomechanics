@@ -48,7 +48,7 @@ int main() {
   /*
     Configuration
   */
-  int duration_of_exercise = 210;
+  int duration_of_exercise = 120;
   double f = 10.93;
   double alfa = 0.1;
 
@@ -109,9 +109,9 @@ int main() {
   cout << "MSTreatments: " << MStreatments << endl;
   cout << "MSerror: " << MSerror << endl;
   cout << "Fo: " << Fo << endl;
-  cout << "a: " << a << ", a-1: " << a - 1 << ", a(n-1): " << a * (n - 1)
+  cout << "alfa: " << alfa << ", a-1: " << a - 1 << ", a(n-1): " << a * (n - 1)
        << endl;
-  cout << "fa,a-1,a(n-1): " << f << " (alfa = " << alfa << ")" << endl;
+  cout << "f_alfa,a-1,a(n-1): " << f << endl;
 
   if (Fo > f) {
     cout << "Fo is greater than f. Thus, we reject Ho" << endl;
