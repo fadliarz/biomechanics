@@ -2,8 +2,9 @@
 
 using namespace std;
 
-void load_experiment_data(vector<vector<vector<int>>> *experiments) {
-  ifstream fin("hst.csv");
+void load_experiment_data(vector<vector<vector<int>>> *experiments,
+                          string file_path) {
+  ifstream fin(file_path);
 
   if (!fin.is_open()) {
     cout << "File error" << endl;
@@ -42,13 +43,13 @@ void load_experiment_data(vector<vector<vector<int>>> *experiments) {
 
 int main() {
   vector<vector<vector<int>>> experiments;
-  load_experiment_data(&experiments);
+  load_experiment_data(&experiments, "hst.csv");
 
   /*
     Configuration
   */
   int duration_of_exercise = 210;
-  double f = 9.16;
+  double f = 10.93;
   double alfa = 0.1;
 
   int a = experiments.size();
@@ -61,6 +62,7 @@ int main() {
       double sum = 0;
       for (int k = 0; k < experiments[0][0].size() / 2; k++) {
         sum += experiments[i][j][k * 2] - experiments[i][j][k * 2 + 1];
+        // sum += experiments[i][j][k * 2 + 1];
       }
       double fitness_index = duration_of_exercise * 100 / (2 * sum);
       cout << "fitnessIndex: " << fitness_index << endl;
