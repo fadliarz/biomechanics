@@ -60,8 +60,8 @@ int main() {
     vector<double> treatment;
     for (int j = 0; j < n; j++) {
       double sum = 0;
-      for (int k = 0; k < experiments[0][0].size() / 2; k++) {
-        sum += experiments[i][j][k * 2] - experiments[i][j][k * 2 + 1];
+      for (int k = 0; k < experiments[0][0].size(); k++) {
+        sum += experiments[i][j][k];
       }
       double fitness_index = duration_of_exercise * 100 / (2 * sum);
       cout << "fitnessIndex: " << fitness_index << endl;
